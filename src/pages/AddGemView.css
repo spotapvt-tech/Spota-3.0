@@ -1,6 +1,32 @@
+/* =====================================================
+   GEM DROP WIZARD — v2.0 Shell
+   ===================================================== */
+
+.add-gem-wizard-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.wizard-step-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.wizard-step {
+  padding: 20px 20px 160px; /* clears fixed CTA (60px) + bottom nav (80px) */
+}
+
+/* =====================================================
+   LEGACY — kept for reference, not rendered by wizard
+   ===================================================== */
+
 .add-gem-outer-wrapper {
   padding: 80px 20px;
-  padding-bottom: 120px; /* space for bottom nav */
+  padding-bottom: 120px;
   max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;

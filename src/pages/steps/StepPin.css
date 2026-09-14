@@ -1,0 +1,310 @@
+.step-pin {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* GPS Banner */
+.gps-banner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  font-size: var(--font-size-sm);
+  min-height: 56px;
+  transition: all 0.3s ease;
+}
+
+.gps-banner.loading {
+  background: rgba(108, 140, 116, 0.06);
+  border-color: rgba(108, 140, 116, 0.2);
+  align-items: center;
+}
+
+.gps-banner.success {
+  background: rgba(22, 50, 34, 0.08);
+  border-color: rgba(40, 90, 55, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  .gps-banner.success {
+    background: rgba(22, 50, 34, 0.5);
+    border-color: rgba(40, 90, 55, 0.5);
+  }
+}
+
+.gps-banner.denied {
+  background: rgba(200, 150, 80, 0.06);
+  border-color: rgba(200, 150, 80, 0.2);
+  align-items: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* Photo EXIF GPS banner */
+.gps-banner.photo {
+  background: linear-gradient(135deg,
+    rgba(108, 140, 116, 0.12),
+    rgba(108, 140, 116, 0.06));
+  border-color: rgba(108, 140, 116, 0.45);
+  align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .gps-banner.photo {
+    background: linear-gradient(135deg,
+      rgba(108, 140, 116, 0.18),
+      rgba(108, 140, 116, 0.08));
+    border-color: rgba(108, 140, 116, 0.5);
+  }
+}
+
+/* "↻ Use my GPS" override button in photo banner */
+.gps-switch-btn {
+  background: var(--color-bg-primary);
+  border: 1px solid rgba(108, 140, 116, 0.5);
+  color: var(--color-accent);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  font-family: var(--font-family-base);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.gps-switch-btn:hover {
+  background: rgba(108, 140, 116, 0.12);
+  border-color: var(--color-accent);
+}
+
+.gps-spinner {
+  animation: spin 1.2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.gps-banner-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.gps-place-name {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+}
+
+.gps-address {
+  font-size: var(--font-size-xs);
+  color: var(--color-accent);
+  line-height: 1.4;
+}
+
+.gps-refresh-btn {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  color: var(--color-accent);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font-family-base);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.gps-refresh-btn:hover {
+  border-color: var(--color-accent);
+  background: rgba(108, 140, 116, 0.1);
+}
+
+.gps-detect-btn {
+  width: 100%;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  transition: all var(--transition-fast);
+}
+
+.gps-detect-btn:hover {
+  background: var(--color-accent-hover);
+}
+
+/* Search */
+.pin-search-container {
+  position: relative;
+}
+
+.pin-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pin-search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.pin-search-input {
+  width: 100%;
+  padding: 12px 36px 12px 36px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.pin-search-input:focus {
+  border-color: var(--color-accent);
+}
+
+.pin-search-clear {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.pin-search-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--color-bg-secondary);
+}
+
+.pin-search-loading {
+  padding: 16px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.pin-search-result {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pin-search-result:last-child {
+  border-bottom: none;
+}
+
+.pin-search-result:hover {
+  background: rgba(108, 140, 116, 0.08);
+}
+
+.pin-result-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pin-result-main {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.pin-result-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+/* Map */
+.pin-map-wrapper {
+  height: 220px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+
+.pin-map-hint {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* Address card */
+.pin-address-card {
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  border: 1px solid var(--color-border);
+}
+
+.pin-address-name {
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.pin-address-full {
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.pin-address-coords {
+  color: var(--color-text-secondary);
+  font-family: monospace;
+  margin-top: 4px;
+  opacity: 0.6;
+}

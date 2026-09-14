@@ -31,7 +31,7 @@ async function urlToBase64(url) {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 4000); // 4s timeout
 
-    const response = await fetch(url, { signal: controller.signal, crossOrigin: 'anonymous' });
+    const response = await fetch(url, { signal: controller.signal, mode: 'cors' });
     clearTimeout(timeoutId);
 
     if (!response.ok) return url;

@@ -1444,7 +1444,7 @@ export default function LandingView() {
             <button className="l-modal-close-btn" onClick={() => setShowAuthModal(false)}>
               <X size={16} />
             </button>
-            <AuthView />
+            <AuthView onClose={() => setShowAuthModal(false)} />
           </div>
         </div>
       )}

@@ -424,6 +424,7 @@ export function drawTripRecapCanvas(canvas, { trip, tripSpots, members, votes },
     
     // Draw pill background
     ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+    ctx.font = "bold 22px 'Outfit', sans-serif";
     const textWidth = ctx.measureText(label).width + 30;
     ctx.beginPath();
     ctx.roundRect(drawX, 1370, textWidth, 60, 30);
@@ -431,7 +432,6 @@ export function drawTripRecapCanvas(canvas, { trip, tripSpots, members, votes },
 
     // Draw emoji text
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = "bold 22px 'Outfit', sans-serif";
     ctx.fillText(label, drawX + 15, 1408);
 
     drawX += textWidth + 20;

@@ -46,7 +46,11 @@ export default function AdminView() {
       navigate('/');
       return;
     }
-    const isAdmin = user.email?.endsWith('@spota.local') || user.email?.includes('admin');
+    // Real admin flag from the profiles table (set server-side via SQL, never
+    // client-writable) — replaces the old email-string check, which was
+    // trivially spoofable (any email containing "admin" passed) and gave no
+    // real protection since it only hid a UI element, not the underlying data.
+    const isAdmin = user.user_metadata?.is_admin === true;
     if (!isAdmin) {
       alert('Access Denied: Only Admins can access this panel.');
       navigate('/profile');

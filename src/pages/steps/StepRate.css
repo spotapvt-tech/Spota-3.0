@@ -1,0 +1,136 @@
+.step-rate {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rate-section-label {
+  display: block;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  margin-bottom: 10px;
+}
+
+/* Presets */
+.rate-presets {
+  display: flex;
+  flex-direction: column;
+}
+
+.rate-preset-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rate-preset-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-family-base);
+  min-width: 70px;
+}
+
+.rate-preset-chip:hover {
+  border-color: var(--color-accent);
+  background: rgba(108, 140, 116, 0.08);
+}
+
+.rate-preset-chip.active {
+  border-color: var(--color-accent);
+  background: rgba(108, 140, 116, 0.14);
+}
+
+.rate-preset-emoji {
+  font-size: 22px;
+}
+
+.rate-preset-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rate-preset-chip.active .rate-preset-label {
+  color: var(--color-accent);
+}
+
+/* Emoji sliders */
+.rate-dimensions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.rate-dimension-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rate-dim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.rate-dim-name {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.rate-dim-description {
+  font-size: var(--font-size-xs);
+  color: var(--color-accent);
+  font-weight: 500;
+  text-align: right;
+  flex: 1;
+}
+
+.rate-emoji-row {
+  display: flex;
+  gap: 6px;
+}
+
+.rate-emoji-btn {
+  flex: 1;
+  aspect-ratio: 1;
+  max-width: 56px;
+  font-size: 20px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.rate-emoji-btn:hover {
+  border-color: var(--color-accent);
+  background: rgba(108, 140, 116, 0.1);
+  transform: scale(1.1);
+}
+
+.rate-emoji-btn.selected {
+  border-color: var(--color-accent);
+  background: rgba(108, 140, 116, 0.18);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 3px rgba(108, 140, 116, 0.2);
+}

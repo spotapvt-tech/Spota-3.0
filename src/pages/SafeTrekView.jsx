@@ -69,7 +69,7 @@ export default function SafeTrekView() {
   // Setup Form State
   const [destinationName, setDestinationName] = useState('');
   const [markerPosition, setMarkerPosition] = useState(null);
-  const [mapCenter, setMapCenter] = useState([40.7128, -74.0060]); // NY Default
+  const [mapCenter, setMapCenter] = useState([28.6139, 77.2090]); // Delhi Default
   const [emergencyName, setEmergencyName] = useState('');
   const [emergencyPhone, setEmergencyPhone] = useState('');
   const [emergencyEmail, setEmergencyEmail] = useState('');

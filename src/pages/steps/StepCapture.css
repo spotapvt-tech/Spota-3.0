@@ -1,0 +1,202 @@
+.step-capture {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step-header {
+  margin-bottom: 4px;
+}
+
+.step-header h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 4px;
+}
+
+.step-header p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.capture-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.capture-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+  padding: 0;
+}
+
+.capture-btn.primary {
+  background: var(--color-accent);
+  color: white;
+  padding: 22px 24px;
+  border-radius: var(--radius-lg);
+  font-size: 18px;
+  box-shadow: 0 4px 16px rgba(108, 140, 116, 0.3);
+}
+
+.capture-btn.primary:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(108, 140, 116, 0.4);
+}
+
+.capture-btn.secondary {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  border: 1px dashed var(--color-border);
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+}
+
+.capture-btn.secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.capture-btn.tertiary {
+  background: transparent;
+  border: 1px dashed var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+}
+
+.capture-btn.tertiary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.capture-preview-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.capture-preview-img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.capture-remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.capture-remove-btn:hover {
+  background: rgba(224, 122, 95, 0.85);
+}
+
+.capture-retake-row {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.capture-retake-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  transition: background var(--transition-fast);
+}
+
+.capture-retake-btn:hover {
+  background: rgba(0,0,0,0.75);
+}
+
+.capture-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.capture-filters-label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+}
+
+.capture-filter-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-family-base);
+}
+
+.filter-chip.active,
+.filter-chip:hover {
+  border-color: var(--color-accent);
+  background: rgba(108, 140, 116, 0.12);
+  color: var(--color-accent);
+}
+
+.capture-video-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 4px;
+  border-top: 1px solid var(--color-border);
+}
+
+.capture-video-label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

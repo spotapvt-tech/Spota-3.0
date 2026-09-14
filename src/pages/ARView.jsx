@@ -119,8 +119,8 @@ export default function ARView({ spots, userLocation, onClose, onSelectSpot }) {
   // 4. Calculate positions of visible spots
   const effectiveHeading = (heading + dragOffset + 360) % 360;
 
-  // Mock a user location if browser geolocation was denied (for testing/deskop)
-  const userCoords = userLocation || [40.7128, -74.006]; // Default to NY
+  // Mock a user location if browser geolocation was denied (for testing/desktop)
+  const userCoords = userLocation || [28.6139, 77.2090]; // Default to Delhi
 
   const visibleSpots = spots
     .map((spot) => {

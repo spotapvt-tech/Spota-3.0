@@ -39,13 +39,14 @@ function MapBoundsAndPath({ spots }) {
   const parseTimeToMinutes = (timeStr) => {
     if (!timeStr) return 0;
     const cleanStr = timeStr.trim().toUpperCase();
-    const parts = cleanStr.split(/\s+/);
-    const timePart = parts[0] || '00:00';
-    const modifier = parts[1] || 'AM';
     
-    const timeSubparts = timePart.split(':');
-    let hours = parseInt(timeSubparts[0], 10) || 0;
-    const minutes = parseInt(timeSubparts[1], 10) || 0;
+    // Match hours, minutes, and optional AM/PM modifier with or without spacing
+    const match = cleanStr.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)?$/);
+    if (!match) return 0;
+    
+    let hours = parseInt(match[1], 10) || 0;
+    const minutes = parseInt(match[2], 10) || 0;
+    const modifier = match[3] || 'AM';
     
     if (modifier === 'PM' && hours < 12) hours += 12;
     if (modifier === 'AM' && hours === 12) hours = 0;
@@ -130,7 +131,7 @@ export default function TripBoardView() {
   const [showAddSpotDrawer, setShowAddSpotDrawer] = useState(false);
   const [showRecapModal, setShowRecapModal] = useState(false);
   const [selectedSpot, setSelectedSpot] = useState(null); // For details modal
-  const [mapCenter, setMapCenter] = useState([40.7128, -74.0060]); // Default
+  const [mapCenter, setMapCenter] = useState([28.6139, 77.2090]); // Default to Delhi
   const [agencyBrand, setAgencyBrand] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
 
