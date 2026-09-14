@@ -7,14 +7,17 @@ import { test, expect } from '@playwright/test';
 // camera/geolocation permissions, and verified selectors inside AddGemView's
 // 5-step wizard, none of which were safe to guess at blind. Treat this as
 // the foundation to build that flow on top of, not the finished item.
+//
+// Note: the marketing landing page only lives at /landing and /welcome
+// (see App.jsx) — root "/" renders AuthView directly for signed-out users.
 test.describe('Landing page', () => {
   test('loads and shows the hero content', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/landing');
     await expect(page.getByRole('heading', { name: 'Ditch the tourists. Find the vibe.' })).toBeVisible();
   });
 
   test('"Start Exploring Free" opens the auth modal', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/landing');
     await page.getByRole('button', { name: 'Start Exploring Free' }).click();
     await expect(page.locator('.l-modal-overlay')).toBeVisible();
   });
