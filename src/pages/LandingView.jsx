@@ -718,7 +718,7 @@ export default function LandingView() {
         </nav>
         <div className="l-header-actions">
           <button className="l-btn-secondary" onClick={() => setShowAuthModal(true)}>Sign In</button>
-          <button className="l-btn-primary" onClick={() => setShowAuthModal(true)}>Launch Web App</button>
+          <button className="l-btn-primary" onClick={() => setShowAuthModal(true)}>Start Exploring Free</button>
         </div>
       </header>
 
@@ -728,25 +728,11 @@ export default function LandingView() {
           <span className="l-tagline">💎 Zen-Social Spot Discovery</span>
           <h1 className="l-hero-title">Ditch the tourists. Find the vibe.</h1>
           <p className="l-hero-desc">
-            Spota is a zen-social discovery map built for off-beat explorers. Track atmospheric vibes, stream loopable Video Vibes, planning cooperative trips, and discover hidden gems in AR—even with zero cellular signal.
+            Spota is a zen-social discovery map built for off-beat explorers. Track atmospheric vibes, stream loopable Video Vibes, plan cooperative trips, and discover hidden gems in AR, even with zero cellular signal.
           </p>
           <div className="l-hero-ctas">
             <button className="l-btn-primary" onClick={() => setShowAuthModal(true)}>Start Exploring Free</button>
             <a href="#sandbox" className="l-btn-secondary">Try Demo Sandbox</a>
-          </div>
-          <div className="l-hero-stats">
-            <div className="l-stat-item">
-              <span className="l-stat-num">24k+</span>
-              <span className="l-stat-lbl">Gems Dropped</span>
-            </div>
-            <div className="l-stat-item">
-              <span className="l-stat-num">98.4%</span>
-              <span className="l-stat-lbl">Off-grid Reliability</span>
-            </div>
-            <div className="l-stat-item">
-              <span className="l-stat-num">12+</span>
-              <span className="l-stat-lbl">Atmospheric Ranks</span>
-            </div>
           </div>
         </div>
 
@@ -1076,6 +1062,22 @@ export default function LandingView() {
         </div>
       </section>
 
+      {/* 2b. Stat strip - moved out of the hero (hero stays value-prop + CTA only) */}
+      <div className="l-stats-bar">
+        <div className="l-stat-item">
+          <span className="l-stat-num">24k+</span>
+          <span className="l-stat-lbl">Gems Dropped</span>
+        </div>
+        <div className="l-stat-item">
+          <span className="l-stat-num">98.4%</span>
+          <span className="l-stat-lbl">Off-grid Reliability</span>
+        </div>
+        <div className="l-stat-item">
+          <span className="l-stat-num">12+</span>
+          <span className="l-stat-lbl">Atmospheric Ranks</span>
+        </div>
+      </div>
+
       {/* 3. Sandbox Panel controls */}
       <section id="sandbox" className="l-sandbox-section">
         <div className="l-sandbox-intro">
@@ -1264,7 +1266,6 @@ export default function LandingView() {
       {/* 5. PRD Specifications and Row-Level Security rules */}
       <section id="specifications" className="l-specs-section">
         <div className="l-sandbox-intro" style={{ alignSelf: 'center' }}>
-          <span className="l-tagline">⚙️ Engineering Specs</span>
           <h2 className="l-sandbox-title">System Architecture</h2>
         </div>
 
@@ -1347,7 +1348,7 @@ export default function LandingView() {
             Join thousands of modern explorers dropping gems in Kasol, Dharamshala, Manali, and beyond. Launch the web app directly or sign up to cache offline maps.
           </p>
           <button className="l-btn-primary" style={{ padding: '16px 40px', fontSize: '16px' }} onClick={() => setShowAuthModal(true)}>
-            Open Web App Interface
+            Start Exploring Free
           </button>
         </div>
       </section>

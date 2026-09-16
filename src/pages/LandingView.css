@@ -136,7 +136,7 @@
 
 .l-btn-primary {
   background: linear-gradient(135deg, var(--l-accent) 0%, #5A7561 100%);
-  color: white;
+  color: #0a0f0c;
   font-weight: 600;
   font-size: 14px;
   padding: 10px 24px;
@@ -213,10 +213,15 @@
   font-size: 16px;
 }
 
-.l-hero-stats {
+/* Stat strip - thin bar directly below the hero, not inside it */
+.l-stats-bar {
   display: flex;
-  gap: 48px;
-  margin-top: 24px;
+  justify-content: center;
+  gap: 64px;
+  padding: 28px 8%;
+  border-bottom: 1px solid var(--l-border);
+  border-top: 1px solid var(--l-border);
+  background-color: rgba(255, 255, 255, 0.015);
 }
 
 .l-stat-item {
@@ -1427,11 +1432,11 @@
   .l-hero-desc {
     max-width: 600px;
   }
-  
-  .l-hero-stats {
-    justify-content: center;
+
+  .l-stats-bar {
+    gap: 40px;
   }
-  
+
   .l-sandbox-layout {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1463,7 +1468,13 @@
   .l-hero-title {
     font-size: 40px;
   }
-  
+
+  .l-stats-bar {
+    flex-wrap: wrap;
+    gap: 24px 40px;
+    padding: 24px 6%;
+  }
+
   .l-features-grid {
     grid-template-columns: 1fr;
   }
@@ -1484,6 +1495,14 @@
   .l-footer-links-grid {
     grid-template-columns: 1fr;
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .l-stats-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
   }
 }
 

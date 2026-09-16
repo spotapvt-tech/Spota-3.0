@@ -18,7 +18,9 @@ test.describe('Landing page', () => {
 
   test('"Start Exploring Free" opens the auth modal', async ({ page }) => {
     await page.goto('/landing');
-    await page.getByRole('button', { name: 'Start Exploring Free' }).click();
+    // The same CTA label appears in the nav, hero, and closing section
+    // (intentional - one label per intent) so target the hero's specifically.
+    await page.locator('.l-hero-ctas').getByRole('button', { name: 'Start Exploring Free' }).click();
     await expect(page.locator('.l-modal-overlay')).toBeVisible();
   });
 });
