@@ -676,41 +676,6 @@ export default function LandingView() {
         </div>
       )}
 
-      {/* Floating Quest HUD Widget */}
-      <div className="l-quest-hud">
-        <div className="l-quest-header">
-          <span className="l-quest-title">
-            <Trophy size={18} style={{ color: '#E0A96D' }} />
-            <span>Quest Log</span>
-          </span>
-          <span className="l-level-tag">{levelName}</span>
-        </div>
-
-        {/* XP Section */}
-        <div className="l-xp-section">
-          <div className="l-xp-info">
-            <span>Level {level}</span>
-            <span>{xp} / 250 XP</span>
-          </div>
-          <div className="l-xp-bar-bg">
-            <div className="l-xp-bar-fill" style={{ width: `${Math.min(100, (xp / 250) * 100)}%` }}></div>
-          </div>
-        </div>
-
-        {/* Checklist */}
-        <div className="l-quest-list">
-          {quests.map(q => (
-            <div key={q.id} className={`l-quest-item ${q.done ? 'completed' : ''}`}>
-              <div className="l-quest-check">
-                {q.done ? '✓' : ''}
-              </div>
-              <span>{q.text}</span>
-              {!q.done && <span className="l-quest-xp-reward">+{q.reward} XP</span>}
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Floating Zen Ambient Soundscape Player (Bottom-Left) */}
       <div 
         className={`l-ambient-player ${isPlayingMusic ? 'active' : ''}`}
@@ -1436,6 +1401,44 @@ export default function LandingView() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Quest HUD Widget — placed after all page content so mobile's
+          static/in-flow layout (see .l-quest-hud media query) puts it at the
+          bottom of the page instead of ahead of the header/hero. Desktop
+          keeps it position:fixed regardless of DOM order. */}
+      <div className="l-quest-hud">
+        <div className="l-quest-header">
+          <span className="l-quest-title">
+            <Trophy size={18} style={{ color: '#E0A96D' }} />
+            <span>Quest Log</span>
+          </span>
+          <span className="l-level-tag">{levelName}</span>
+        </div>
+
+        {/* XP Section */}
+        <div className="l-xp-section">
+          <div className="l-xp-info">
+            <span>Level {level}</span>
+            <span>{xp} / 250 XP</span>
+          </div>
+          <div className="l-xp-bar-bg">
+            <div className="l-xp-bar-fill" style={{ width: `${Math.min(100, (xp / 250) * 100)}%` }}></div>
+          </div>
+        </div>
+
+        {/* Checklist */}
+        <div className="l-quest-list">
+          {quests.map(q => (
+            <div key={q.id} className={`l-quest-item ${q.done ? 'completed' : ''}`}>
+              <div className="l-quest-check">
+                {q.done ? '✓' : ''}
+              </div>
+              <span>{q.text}</span>
+              {!q.done && <span className="l-quest-xp-reward">+{q.reward} XP</span>}
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* 8. Glassmorphic Authentication Modal Overlay */}
       {showAuthModal && (
